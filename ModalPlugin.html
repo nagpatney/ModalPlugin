@@ -1,0 +1,29 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="./ModalPlugin.css"/>
+    </head>
+    <body>
+            <button id="trigger" class="trigger-button" type="button">Launch Modal</button>
+    </body>
+    <script src="./ModalPlugin.js"></script>
+    <script>
+    let myModal = new Modal({
+        content:"<p>My csutom modal</p>",
+        maxWidth:600,
+        primaryCta:'OK',
+        secondaryCta:'Cancel',
+        primaryCtaFunc:clickCallBack,
+        secondaryCtaFunc:secondaryCtaClick
+    });
+    let triggerButton = document.getElementById('trigger');
+    triggerButton.addEventListener('click', function() {
+        myModal.open();
+    });
+    function clickCallBack(){
+        console.log('click')
+    }
+    function secondaryCtaClick(){
+        console.log('cancel')
+    }
+    </script>
+</html>
